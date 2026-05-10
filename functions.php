@@ -17,6 +17,11 @@ function your_rights_files() {
         get_template_directory_uri() . '/style.css'
     );
 
+    wp_enqueue_style(
+        'inner-pages-style',
+        get_template_directory_uri() . '/assets/css/inner-pages.css'
+    );
+
 }
 
 add_action('wp_enqueue_scripts', 'your_rights_files');
@@ -25,6 +30,8 @@ add_action('wp_enqueue_scripts', 'your_rights_files');
 
 function your_rights_features() {
 
+    add_theme_support('menus');
+
     register_nav_menus(array(
         'main-menu' => 'Main Menu',
         'footer-menu' => 'Footer Menu'
@@ -32,4 +39,4 @@ function your_rights_features() {
 
 }
 
-add_theme_support('menus');
+add_action('after_setup_theme', 'your_rights_features');
