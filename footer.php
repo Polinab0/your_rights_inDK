@@ -32,11 +32,6 @@ $footer_id = $footer_page ? $footer_page->ID : null;
             <h3><?php echo esc_html(get_field('footer_contact_title', $footer_id)); ?></h3>
 
             <p>
-                <img src="<?php echo esc_url(get_field('footer_phone_icon', $footer_id)); ?>" alt="Phone icon">
-                <?php echo esc_html(get_field('footer_phone', $footer_id)); ?>
-            </p>
-
-            <p>
                 <img src="<?php echo esc_url(get_field('footer_email_icon', $footer_id)); ?>" alt="Email icon">
 
                 <a href="mailto:<?php echo esc_attr(get_field('footer_email', $footer_id)); ?>">
