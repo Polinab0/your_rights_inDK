@@ -8,58 +8,100 @@
     <?php wp_head(); ?>
 </head>
 
+
+
 <body <?php body_class(); ?>>
 
+
+
 <header class="site-header">
+
+
+    <ul><?php pll_the_languages() ?></ul>
+
+
+    
+
+    <div class="mobile-menu-overlay"></div>
+
     <div class="container header-inner">
 
+        <button class="mobile-menu-button" type="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav class="main-nav">
+
             <ul class="menu-list">
 
                 <?php if (!is_front_page()) : ?>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
+                    <li>
+                        <a href="<?php echo esc_url(home_url('/')); ?>">
+                            Home
+                        </a>
+                    </li>
                 <?php endif; ?>
 
                 <?php if (!is_page('salary-contract')) : ?>
-                    <li><a href="<?php echo esc_url(home_url('/salary-contract/')); ?>">Salary & Contract</a></li>
+                    <li>
+                        <a href="<?php echo esc_url(home_url('/salary-contract/')); ?>">
+                            Salary & Contract
+                        </a>
+                    </li>
                 <?php endif; ?>
 
                 <?php if (!is_page('working-hours-safety')) : ?>
-                    <li><a href="<?php echo esc_url(home_url('/working-hours-safety/')); ?>">Working Hours & Safety</a></li>
+                    <li>
+                        <a href="<?php echo esc_url(home_url('/working-hours-safety/')); ?>">
+                            Working Hours & Safety
+                        </a>
+                    </li>
                 <?php endif; ?>
 
                 <?php if (!is_page('holiday-pension')) : ?>
-                    <li><a href="<?php echo esc_url(home_url('/holiday-pension/')); ?>">Holiday & Pension</a></li>
+                    <li>
+                        <a href="<?php echo esc_url(home_url('/holiday-pension/')); ?>">
+                            Holiday & Pension
+                        </a>
+                    </li>
                 <?php endif; ?>
 
                 <?php if (!is_page('faq')) : ?>
-                    <li><a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ</a></li>
+                    <li>
+                        <a href="<?php echo esc_url(home_url('/faq/')); ?>">
+                            FAQ
+                        </a>
+                    </li>
                 <?php endif; ?>
 
             </ul>
+
         </nav>
 
         <div class="search-box">
 
-            <button class="search-toggle" type="button">
+            <button class="search-toggle" type="button" aria-label="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
 
-            <form class="search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get">
-                <input type="search" name="s" placeholder="Search">
+            <form 
+                class="search-form"
+                action="<?php echo esc_url(home_url('/')); ?>"
+                method="get"
+            >
+
+                <input
+                    type="search"
+                    name="s"
+                    placeholder="Search"
+                >
+
             </form>
 
         </div>
 
     </div>
-
-    <script>
-        const searchButton = document.querySelector('.search-toggle');
-        const searchForm = document.querySelector('.search-form');
-
-        searchButton.addEventListener('click', function () {
-            searchForm.classList.toggle('is-open');
-        });
-    </script>
 
 </header>

@@ -58,19 +58,6 @@ $footer_id = $footer_page ? $footer_page->ID : null;
 </footer>
 
 
-<script>
-    const accordionItems = document.querySelectorAll('.accordion-item');
-
-    accordionItems.forEach(function(item) {
-        const button = item.querySelector('.accordion-header');
-
-        button.addEventListener('click', function() {
-            item.classList.toggle('is-open');
-        });
-    });
-</script>
-
-
 
 <?php wp_footer(); ?>
 </body>

@@ -158,9 +158,13 @@
 
 
 
-<section id="rights-cards" class="cards-section">
+<section id="rights-cards" class="cards-section rights-steps-section">
 
     <div class="container cards-inner">
+
+        <h2 class="cards-section-title">
+           <?php echo esc_html(get_field('cards_section_title')); ?>
+        </h2>
 
         <div class="cards-grid">
 
@@ -172,37 +176,52 @@
                 'order' => 'ASC'
             ));
 
+            $step = 1;
+
             if ($cards->have_posts()) :
                 while ($cards->have_posts()) : $cards->the_post();
             ?>
 
-                <article class="rights-card">
+                <div class="step-card-wrap">
 
-                    <h3><?php echo esc_html(get_field('card_text')); ?></h3>
+                    <div class="step-label">
+                          <?php echo esc_html(get_field('card_step')); ?>
+                    </div>
 
-                    <img
-                        class="card-icon"
-                        src="<?php echo esc_url(get_field('card_icon')); ?>"
-                        alt="<?php echo esc_attr(get_field('card_text')); ?>"
-                    >
+                    <article class="rights-card">
 
-                    <p><?php echo esc_html(get_field('card_description')); ?></p>
-
-                    <a class="card-link" href="<?php echo esc_url(get_field('card_button_link')); ?>">
-
-                        <?php echo esc_html(get_field('card_button_text')); ?>
+                        <h3>
+                            <?php echo esc_html(get_field('card_text')); ?>
+                        </h3>
 
                         <img
-                            class="card-arrow"
-                            src="<?php echo esc_url(get_field('card_arrow_icon')); ?>"
-                            alt="Arrow icon"
+                            class="card-icon"
+                            src="<?php echo esc_url(get_field('card_icon')); ?>"
+                            alt="<?php echo esc_attr(get_field('card_text')); ?>"
                         >
 
-                    </a>
+                        <p>
+                            <?php echo esc_html(get_field('card_description')); ?>
+                        </p>
 
-                </article>
+                        <a class="card-link" href="<?php echo esc_url(get_field('card_button_link')); ?>">
+
+                            <?php echo esc_html(get_field('card_button_text')); ?>
+
+                            <img
+                                class="card-arrow"
+                                src="<?php echo esc_url(get_field('card_arrow_icon')); ?>"
+                                alt=""
+                            >
+
+                        </a>
+
+                    </article>
+
+                </div>
 
             <?php
+                $step++;
                 endwhile;
                 wp_reset_postdata();
             endif;

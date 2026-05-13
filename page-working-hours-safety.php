@@ -4,20 +4,20 @@
 
     <div class="inner-page-dark">
 
-        <section class="salary-top">
+        <section class="salary-top salary-top--long-title">
             <div class="salary-top__container">
 
-                <h1 class="salary-top__title">
-                    <?php echo esc_html(get_field('top_title')); ?>
-                </h1>
+             <h1 class="salary-top__title">
+                 <?php echo esc_html(get_field('top_title')); ?>
+             </h1>
 
-                <p class="salary-top__text">
-                    <?php echo esc_html(get_field('top_text')); ?>
-                </p>
+             <p class="salary-top__text">
+                 <?php echo esc_html(get_field('top_text')); ?>
+             </p>
 
-                <div class="salary-top__small-text">
-                    <?php echo nl2br(esc_html(get_field('top_small_text'))); ?>
-                </div>
+             <div class="salary-top__small-text">
+                 <?php echo nl2br(esc_html(get_field('top_small_text'))); ?>
+             </div>
 
             </div>
         </section>

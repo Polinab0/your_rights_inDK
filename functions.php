@@ -18,8 +18,18 @@ function your_rights_files() {
     );
 
     wp_enqueue_style(
-        'inner-pages-style',
-        get_template_directory_uri() . '/assets/css/inner-pages.css'
+    'inner-pages-style',
+    get_template_directory_uri() . '/assets/css/css/inner-pages.css',
+    array('main-style'),
+    filemtime(get_template_directory() . '/assets/css/css/inner-pages.css')
+);
+
+    wp_enqueue_script(
+        'main-js',
+        get_template_directory_uri() . '/assets/js/main.js',
+        array(),
+        null,
+        true
     );
 
 }
